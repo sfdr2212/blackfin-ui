@@ -477,62 +477,51 @@ body {
 
 .cardOverlayContainer {
     transition: 0.5s;
-    background: rgba(255, 255, 255, 0.05);
+    background: transparent;
 }
 
+/* Modern frosted-glass gloss: a single soft light streak glides
+ * across the poster once on hover. One-shot keyframe means only the
+ * hovered tile ever animates, and the image is never tinted. */
 .cardOverlayContainer:after {
-    content: var(--cardHoverEffect);
+    content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -10%;
+    bottom: -10%;
     left: 0;
-    right: 0;
+    width: 60%;
     opacity: 0;
-    transform: translateY(-50%) translateX(0);
-    background: var(--hoverGradientV);
+    transform: translateX(-180%) skewX(-20deg);
+    background: linear-gradient(
+        100deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.06) 40%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0.06) 60%,
+        transparent 100%
+    );
+    filter: blur(2px);
     pointer-events: none;
 }
 
 .card-hoverable:hover .cardOverlayContainer:after {
-    animation: blackfinShineV 0.5s ease forwards;
+    animation: blackfinGlass 0.85s ease forwards;
 }
 
-.backdropCard.card-hoverable .cardOverlayContainer:after,
-.overflowBackdropCard.card-hoverable .cardOverlayContainer:after {
-    transform: translateY(0) translateX(-50%);
-    background: var(--hoverGradientH);
-}
-
-.backdropCard.card-hoverable:hover .cardOverlayContainer:after,
-.overflowBackdropCard.card-hoverable:hover .cardOverlayContainer:after {
-    animation: blackfinShineH 0.5s ease forwards;
-}
-
-@keyframes blackfinShineV {
+@keyframes blackfinGlass {
     0% {
         opacity: 0;
-        transform: translateY(-50%) translateX(0);
+        transform: translateX(-180%) skewX(-20deg);
     }
-    50% {
+    15% {
+        opacity: 1;
+    }
+    85% {
         opacity: 1;
     }
     100% {
         opacity: 0;
-        transform: translateY(50%) translateX(0);
-    }
-}
-
-@keyframes blackfinShineH {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(-50%);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(0) translateX(50%);
+        transform: translateX(280%) skewX(-20deg);
     }
 }
 
@@ -4232,4 +4221,10 @@ for extended styling, use the add-on */
     border-radius: 0.4em !important;
     font-weight: 600;
     letter-spacing: 0.02em;
+}
+
+/* Frosted-glass edge highlight on hover (modern glass feel) */
+.card-hoverable:hover .cardScalable {
+    box-shadow: inset 0 0 0 0.08em rgba(255, 255, 255, 0.18),
+        0 0.3em 0.9em rgba(0, 0, 0, 0.55);
 }
