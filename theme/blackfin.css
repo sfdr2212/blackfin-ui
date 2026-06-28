@@ -477,7 +477,7 @@ body {
 
 .cardOverlayContainer:after {
     content: var(--cardHoverEffect);
-    transition: 0.5s;
+    transition: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -488,6 +488,7 @@ body {
 }
 
 .card-hoverable:hover .cardOverlayContainer:after {
+    transition: 0.5s;
     transform: translateY(50%) translateX(0);
     opacity: 0;
 }
@@ -500,6 +501,7 @@ body {
 
 .backdropCard.card-hoverable:hover .cardOverlayContainer:after,
 .overflowBackdropCard.card-hoverable:hover .cardOverlayContainer:after {
+    transition: 0.5s;
     transform: translateY(0) translateX(50%);
     opacity: 0;
 }
