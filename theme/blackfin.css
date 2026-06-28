@@ -115,15 +115,15 @@
     --hoverGradientV: linear-gradient(
         0deg,
         transparent,
-        rgb(255 255 255 / 100%) 45%,
-        rgb(255 255 255 / 100%) 55%,
+        rgb(255 255 255 / 30%) 45%,
+        rgb(255 255 255 / 30%) 55%,
         transparent
     );
     --hoverGradientH: linear-gradient(
         90deg,
         transparent,
-        rgb(255 255 255 / 100%) 45%,
-        rgb(255 255 255 / 100%) 55%,
+        rgb(255 255 255 / 30%) 45%,
+        rgb(255 255 255 / 30%) 55%,
         transparent
     );
 
