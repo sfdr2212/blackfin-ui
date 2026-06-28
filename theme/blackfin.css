@@ -4168,3 +4168,68 @@ for extended styling, use the add-on */
 }
 
 /* basic styling for the Media Bar Plugin - end */
+
+/* ============================================================
+ * BlackFin -> Plex-style redesign (override layer)
+ * Appended last so it wins the cascade. Keeps the grey color
+ * scheme and the hover shimmer/lift untouched.
+ * To revert: delete everything below this banner in BOTH
+ * theme/blackfin.css and theme/blackfin-minified.css.
+ * ============================================================ */
+
+/* Poster cards: subtle radius, borderless, flat shadow (Plex) */
+.cardScalable,
+.layout-mobile .cardScalable {
+    border: none !important;
+    border-radius: 0.45em !important;
+    box-shadow: 0 0.15em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.cardImageContainer {
+    border-radius: 0.45em;
+}
+
+/* Keep keyboard/remote focus affordance without the old border */
+.card:focus .cardScalable {
+    outline: 0.15em solid #fff;
+    outline-offset: 0.1em;
+}
+
+/* Card text under the poster: left-aligned Plex hierarchy */
+.cardText {
+    text-align: left !important;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.cardText-first {
+    color: var(--textColor) !important;
+    font-weight: 600 !important;
+    font-size: 0.95em;
+}
+
+.cardText-secondary {
+    color: var(--dimTextColor) !important;
+    font-weight: 400 !important;
+    font-size: 0.85em;
+}
+
+/* Home & library row titles: bold and prominent (Plex) */
+.sectionTitle {
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+}
+
+/* Detail page poster: rounded with a soft drop shadow (Plex preplay) */
+.detailImageContainer .card .cardScalable,
+.detailImageContainer .card .cardImageContainer {
+    border-radius: 0.6em !important;
+    box-shadow: 0 0.6em 1.8em rgba(0, 0, 0, 0.65);
+}
+
+/* Primary Play button: Plex-style solid rounded button */
+.btnPlay.detailButton {
+    border-radius: 0.4em !important;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
