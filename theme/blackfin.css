@@ -481,59 +481,27 @@ body {
 }
 
 .cardOverlayContainer:after {
-    content: var(--cardHoverEffect);
+    content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent 30%,
+        rgba(0, 255, 255, 0.3)
+    );
+    transform: rotate(-45deg);
     opacity: 0;
-    transform: translateY(-50%) translateX(0);
-    background: var(--hoverGradientV);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
 }
 
 .card-hoverable:hover .cardOverlayContainer:after {
-    animation: blackfinShineV 0.5s ease forwards;
-}
-
-.backdropCard.card-hoverable .cardOverlayContainer:after,
-.overflowBackdropCard.card-hoverable .cardOverlayContainer:after {
-    transform: translateY(0) translateX(-50%);
-    background: var(--hoverGradientH);
-}
-
-.backdropCard.card-hoverable:hover .cardOverlayContainer:after,
-.overflowBackdropCard.card-hoverable:hover .cardOverlayContainer:after {
-    animation: blackfinShineH 0.5s ease forwards;
-}
-
-@keyframes blackfinShineV {
-    0% {
-        opacity: 0;
-        transform: translateY(-50%) translateX(0);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(50%) translateX(0);
-    }
-}
-
-@keyframes blackfinShineH {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(-50%);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(0) translateX(50%);
-    }
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
 }
 
 .cardBox:not(.visualCardBox) .cardPadder {
