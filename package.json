@@ -1,0 +1,15 @@
+{
+  "name": "blackfin-ui",
+  "version": "0.1.0",
+  "description": "A personal Jellyfin theme, forked from NeutralFin (GPL-2.0).",
+  "license": "GPL-2.0",
+  "private": true,
+  "scripts": {
+    "build": "cleancss -o theme/blackfin-minified.css theme/blackfin.css",
+    "watch": "onchange \"theme/blackfin.css\" -- npm run build"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "onchange": "^7.1.0"
+  }
+}
