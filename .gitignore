@@ -1,3 +1,5 @@
 node_modules/
 .toolcheck.txt
+.gitout.txt
+.gitinfo.txt
 *.log
