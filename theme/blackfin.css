@@ -4236,56 +4236,56 @@ for extended styling, use the add-on */
  * is turned into a cinematic layout: the first item becomes a
  * full-width hero banner with overlaid title + gradient, and
  * the remaining items flow as a poster grid below it.
- * NOTE: assumes the default home section order and that the
- * first library is the one you want featured. Desktop only.
+ * NOTE: targets the FIRST Recently Added library row (assumed
+ * to be Movies). Index-independent. Desktop only.
  * To revert: delete everything below this banner in BOTH
  * theme/blackfin.css and theme/blackfin-minified.css.
  * ============================================================ */
-.layout-desktop .section6 > .verticalSection:first-child .emby-scroller {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .emby-scroller {
     overflow: visible !important;
     white-space: normal !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .emby-scrollbuttons {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .emby-scrollbuttons {
     display: none !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .itemsContainer {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .itemsContainer {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
     gap: 0.6em;
     overflow: visible !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card {
     width: auto !important;
     padding: 0 !important;
     margin: 0 !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child {
     grid-column: 1 / -1;
     position: relative;
     margin-bottom: 0.5em !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardScalable {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardScalable {
     aspect-ratio: 21 / 8;
     border-radius: 0.7em !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardImageContainer {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardImageContainer {
     background-position: center 20% !important;
     background-size: cover !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child img.cardImage,
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardImage {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child img.cardImage,
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardImage {
     object-fit: cover !important;
     object-position: center 20% !important;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardScalable::before {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardScalable::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -4299,7 +4299,7 @@ for extended styling, use the add-on */
     );
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardText {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardText {
     position: absolute;
     left: 1.2em;
     right: 1.2em;
@@ -4309,12 +4309,12 @@ for extended styling, use the add-on */
     text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.8);
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardText-first {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardText-first {
     font-size: 1.9em !important;
     font-weight: 700 !important;
     line-height: 1.1;
 }
 
-.layout-desktop .section6 > .verticalSection:first-child .card:first-child .cardText-secondary {
+.layout-desktop .homeSectionsContainer > div > .verticalSection:first-child .card:first-child .cardText-secondary {
     font-size: 1em !important;
 }
