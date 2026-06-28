@@ -477,20 +477,18 @@ body {
 
 .cardOverlayContainer:after {
     content: var(--cardHoverEffect);
-    transition: none;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    opacity: 0;
     transform: translateY(-50%) translateX(0);
     background: var(--hoverGradientV);
 }
 
 .card-hoverable:hover .cardOverlayContainer:after {
-    transition: 0.5s;
-    transform: translateY(50%) translateX(0);
-    opacity: 0;
+    animation: blackfinShineV 0.5s ease forwards;
 }
 
 .backdropCard.card-hoverable .cardOverlayContainer:after,
@@ -501,9 +499,35 @@ body {
 
 .backdropCard.card-hoverable:hover .cardOverlayContainer:after,
 .overflowBackdropCard.card-hoverable:hover .cardOverlayContainer:after {
-    transition: 0.5s;
-    transform: translateY(0) translateX(50%);
-    opacity: 0;
+    animation: blackfinShineH 0.5s ease forwards;
+}
+
+@keyframes blackfinShineV {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50%) translateX(0);
+    }
+}
+
+@keyframes blackfinShineH {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) translateX(50%);
+    }
 }
 
 .cardBox:not(.visualCardBox) .cardPadder {
